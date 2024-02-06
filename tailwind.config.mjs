@@ -47,10 +47,18 @@ module.exports = {
 			},
 			colors: {
 
+				"primary": "#313540",
+				"oplayo_green": "#4daf2f",
 
 			},
 			fontFamily: {
 
+				"lato": [ "Lato", "sans-serif" ]
+
+			},
+			screens: {
+
+				"mac": "1440px"
 
 			}
 
