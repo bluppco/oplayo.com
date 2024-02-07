@@ -49,7 +49,8 @@ module.exports = {
 
 				"primary": "#313540",
 				"oplayo_green": "#4daf2f",
-				"oplayo_dark_gray": "#444444"
+				"oplayo_dark_gray": "#444444",
+				"oplayo_light_gray": "#f3f6f6"
 
 			},
 			fontFamily: {

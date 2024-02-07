@@ -18,6 +18,7 @@ import Footer from "@/components/common/footer/index.astro"
 import Hero from "@/components/home/hero/index.astro"
 import LetsTalk from "@/components/home/lets-talk/index.astro"
 import Clients from "@/components/home/clients/index.astro"
+import Services from "@/components/home/services/index.astro"
 ---
 <Layout
 	description={ meta.description }
@@ -32,5 +33,9 @@ import Clients from "@/components/home/clients/index.astro"
 		data={ home_data.clients }
 		projects={ projects }
 	/>
-	<Footer/>
+	<Services
+		data={ home_data.services }
+		services={ services }
+	/>
+	<Footer />
 </Layout>
