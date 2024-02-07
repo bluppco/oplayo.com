@@ -1,9 +1,9 @@
 ---
 // IMPORTS ASTRO LAYOUTS
-import Container from "@/layouts/Container.astro"
+import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
-import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import LargePrimaryButton from "@/atoms/buttons/primary/large/index.astro"
 import Link from "@/atoms/links/index.astro"
 
 const { data } = Astro.props
@@ -14,7 +14,7 @@ const { data } = Astro.props
             <h1 class="text-white text-8xl font-bebas_neue uppercase tracking-wide">{ data.title }</h1>
             <div>
                 <Link href={ data.button_link } aria_label="">
-                    <PrimaryButton>{ data.button_text }</PrimaryButton>
+                    <LargePrimaryButton>{ data.button_text }</LargePrimaryButton>
                 </Link>
             </div>
         </section>

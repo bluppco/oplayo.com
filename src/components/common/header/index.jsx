@@ -1,5 +1,5 @@
 // IMPORTS LAYOUTS
-import Container from "@/layouts/Container.jsx"
+import Container from "@/layouts/container/jsx/index.jsx"
 
 // IMPORTS ATOMS
 import Link from "@/atoms/links/jsx/index"

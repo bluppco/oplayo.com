@@ -8,15 +8,16 @@ const env = runtime.env.ENVIRONMENT
 const { home_data, projects, services, blogs, meta } = data
 
 // IMPORT LAYOUT COMPONENTS
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/layout/index.astro"
 
-// IMPORT COMMON COMPONENTS
-import Footer from "@/components/common/footer/index.astro"
-import Header from "@/components/common/header/index.jsx"
+// IMPORTS COMMON COMPONENTS
 import HeaderBanner from "@/components/common/header-banner/index.astro"
+import Header from "@/components/common/header/index.jsx"
+import Footer from "@/components/common/footer/index.astro"
 
-// HOME COMPONENTS
+// IMPORTS COMPONENTS
 import Hero from "@/components/home/hero/index.astro"
+import LetsTalk from "@/components/home/lets-talk/index.astro"
 ---
 <Layout
 	description={ meta.description }
@@ -26,5 +27,6 @@ import Hero from "@/components/home/hero/index.astro"
 	<HeaderBanner />
 	<Header data={ blogs } />
 	<Hero data={ home_data.hero } />
+	<LetsTalk data={ home_data.lets_talk } />
 	<Footer/>
 </Layout>
