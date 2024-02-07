@@ -1,0 +1,22 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/Container.astro"
+
+// IMPORTS ASTRO ATOMS
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const { data } = Astro.props
+---
+<section class="bg-primary py-20 mt-28">
+    <Container>
+        <section class="space-y-10">
+            <h1 class="text-white text-8xl font-bebas_neue uppercase tracking-wide">{ data.title }</h1>
+            <div>
+                <Link href={ data.button_link } aria_label="">
+                    <PrimaryButton>{ data.button_text }</PrimaryButton>
+                </Link>
+            </div>
+        </section>
+    </Container>
+</header>

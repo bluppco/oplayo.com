@@ -2,12 +2,12 @@
 import Container from "@/layouts/Container.jsx"
 
 // IMPORTS ATOMS
-import Link from "@/atoms/link/jsx/index"
+import Link from "@/atoms/links/jsx/index"
 
 const Header = ( props ) => {
 
     return(
-        <header className="fixed top-10 w-full hidden md:block bg-primary h-20">
+        <header className="fixed top-10 w-full hidden md:block bg-primary h-20 border-b border-black/20">
             <Container>
                 <section className="flex items-center justify-between h-full">
                     <Link href="/" aria_label="">

@@ -53,7 +53,9 @@ module.exports = {
 			},
 			fontFamily: {
 
-				"lato": [ "Lato", "sans-serif" ]
+				"lato": [ "Lato", "sans-serif" ],
+				"bebas_neue": [ "Bebas Neue", "display" ],
+				"roboto_condensed": ["Roboto Condensed", "sans-serif" ]
 
 			},
 			screens: {

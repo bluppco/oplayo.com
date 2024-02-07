@@ -1,4 +1,11 @@
 ---
+import { homeAPI } from "../api/home"
+
+const runtime = Astro.locals.runtime
+const data = await homeAPI( runtime.env.ENVIRONMENT )
+const env = runtime.env.ENVIRONMENT
+
+const { home_data, projects, services, blogs, meta } = data
 
 // IMPORT LAYOUT COMPONENTS
 import Layout from "@/layouts/Layout.astro"
@@ -9,16 +16,15 @@ import Header from "@/components/common/header/index.jsx"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 // HOME COMPONENTS
-import Home from "@/components/home/index.astro"
-
+import Hero from "@/components/home/hero/index.astro"
 ---
 <Layout
-	description=""
-	image=""
-	title=""
+	description={ meta.description }
+	image={ meta.cover }
+	title={ meta.title }
 >
-	<HeaderBanner/>
-	<Header/>
-	<Home/>
+	<HeaderBanner />
+	<Header data={ blogs } />
+	<Hero data={ home_data.hero } />
 	<Footer/>
 </Layout>

@@ -1,6 +1,10 @@
 ---
 // IMPORTS CUSTOM STYLES
 import "@/styles/globals.css"
+import "@/styles/custom.css"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK } from "@/constants/image"
 
 const {
 
@@ -17,7 +21,7 @@ const {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=lato:300,400,700" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=bebas-neue:400|lato:300,400,700|roboto-condensed:700" rel="stylesheet" />
         <title>{ title }</title>
         <meta name="title" content={ title } />
         <meta name="description" content={ description } />
@@ -25,15 +29,15 @@ const {
         <meta property="og:url" content="" />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ description } />
-        <meta property="og:image" content={ image } />
+        <meta property="og:image" content={ CDN_LINK + image } />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="" />
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
-        <meta property="twitter:image" content={ image } />
-        <meta property="twitter:image" content={ image } />
+        <meta property="twitter:image" content={ CDN_LINK + image } />
+        <meta property="twitter:image" content={ CDN_LINK + image } />
         <meta property="article:publisher" content="" />
-        <link rel="icon" href="">
+        <link rel="icon" href="" />
     </head>
     <body class="">
         <slot />
