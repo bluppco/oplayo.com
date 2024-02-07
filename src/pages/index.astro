@@ -3,7 +3,6 @@ import { homeAPI } from "../api/home"
 
 const runtime = Astro.locals.runtime
 const data = await homeAPI( runtime.env.ENVIRONMENT )
-const env = runtime.env.ENVIRONMENT
 
 const { home_data, projects, services, blogs, meta } = data
 
@@ -18,6 +17,7 @@ import Footer from "@/components/common/footer/index.astro"
 // IMPORTS COMPONENTS
 import Hero from "@/components/home/hero/index.astro"
 import LetsTalk from "@/components/home/lets-talk/index.astro"
+import Clients from "@/components/home/clients/index.astro"
 ---
 <Layout
 	description={ meta.description }
@@ -28,5 +28,9 @@ import LetsTalk from "@/components/home/lets-talk/index.astro"
 	<Header data={ blogs } />
 	<Hero data={ home_data.hero } />
 	<LetsTalk data={ home_data.lets_talk } />
+	<Clients
+		data={ home_data.clients }
+		projects={ projects }
+	/>
 	<Footer/>
 </Layout>
