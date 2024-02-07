@@ -19,6 +19,7 @@ import Hero from "@/components/home/hero/index.astro"
 import LetsTalk from "@/components/home/lets-talk/index.astro"
 import Clients from "@/components/home/clients/index.astro"
 import Services from "@/components/home/services/index.astro"
+import Insights from "@/components/home/insights/index.astro"
 ---
 <Layout
 	description={ meta.description }
@@ -26,7 +27,7 @@ import Services from "@/components/home/services/index.astro"
 	title={ meta.title }
 >
 	<HeaderBanner />
-	<Header data={ blogs } />
+	<Header client:load />
 	<Hero data={ home_data.hero } />
 	<LetsTalk data={ home_data.lets_talk } />
 	<Clients
@@ -36,6 +37,10 @@ import Services from "@/components/home/services/index.astro"
 	<Services
 		data={ home_data.services }
 		services={ services }
+	/>
+	<Insights
+		data={ home_data.insights }
+		blogs={ blogs }
 	/>
 	<Footer />
 </Layout>
