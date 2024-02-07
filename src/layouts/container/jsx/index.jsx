@@ -1,0 +1,12 @@
+const Container = ( props ) => {
+
+    return(
+        <section className="container mx-auto px-4 md:px-0 sm:max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mac:max-w-[1140px] 2xl:max-w-screen-xl h-full">
+            { props.children }
+        </section>
+
+    )
+
+}
+
+export default Container
