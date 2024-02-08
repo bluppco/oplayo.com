@@ -52,8 +52,9 @@ module.exports = {
 				"oplayo_dark_gray": "#444444",
 				"oplayo_light_gray": "#f3f6f6",
 				"oplayo_zinc": "#b1b5c0",
+				"oplayo_slate": "#999999",
 				"oplayo_midnight_blue": "#313543",
-				"oplayo_slate": "#999999"
+				"oplayo_dark_slate": "#3a3f4e"
 
 			},
 			fontFamily: {
