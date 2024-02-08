@@ -18,6 +18,8 @@ export const homeAPI = async ( environment ) => {
         insights : "",
         clients : "",
         services : "",
+        telephone_number : "",
+        location : "",
 
     }
     home.map( ( data ) => {
@@ -32,6 +34,10 @@ export const homeAPI = async ( environment ) => {
             home_data.clients = data
         else if ( data.slug === "services" )
             home_data.services = data
+        else if ( data.slug === "telephone-number" )
+            home_data.telephone_number = data
+        else if ( data.slug === "location" )
+            home_data.location = data
 
     })
 

@@ -1,0 +1,31 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import InformationCard from "./information-card/index.astro"
+
+const { number, location } = Astro.props
+---
+<section class="bg-primary py-20">
+    <Container>
+        <section class="grid grid-cols-2 gap-4">
+            <InformationCard
+                title={ number.title }
+                sub_title={ number.sub_title }
+                description={ number.description }
+                src={ number.cover }
+                alt={ number.title }
+                href={ number.link }
+            />
+            <InformationCard
+                title={ location.title }
+                sub_title={ location.sub_title }
+                description={ location.description }
+                src={ location.cover }
+                alt={ location.title }
+                href={ location.link }
+            />
+        </section>
+    </Container>
+</section>
