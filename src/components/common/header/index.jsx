@@ -6,8 +6,10 @@ import Link from "@/atoms/links/jsx/index"
 
 const Header = ( props ) => {
 
+    const { top_fixed } = props
+
     return(
-        <header className="fixed top-10 w-full hidden md:block bg-primary h-20 border-b border-black/20">
+        <header className={` ${ top_fixed ? "top-0" : "top-10" } fixed w-full hidden md:block bg-primary h-20 border-b border-black/20`}>
             <Container>
                 <section className="flex items-center justify-between h-full">
                     <Link href="/" aria_label="">
