@@ -1,0 +1,24 @@
+---
+// IMPORTS ASTRO ATOMS
+import TargetBlankLink from "@/atoms/links/target-blank/index.astro"
+
+const {
+
+    src,
+    alt,
+    href,
+    aria_label
+
+} = Astro.props
+---
+<div>
+    <TargetBlankLink href={ href } aria_label={ aria_label }>
+        <div class="size-6">
+            <img
+                src={ src }
+                alt={ alt }
+                class="size-6"
+            />
+        </div>
+    </TargetBlankLink>
+</div>
