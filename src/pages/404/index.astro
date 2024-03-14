@@ -13,7 +13,10 @@ import NotFound from "@/components/common/404/index.astro"
 	image=""
 >
     <section class="md:h-screen md:max-h-screen">
-        <Header client:load />
+        <Header
+            top_fixed={ true }
+            client:load
+        />
         <NotFound />
     </section>
 	<Footer />

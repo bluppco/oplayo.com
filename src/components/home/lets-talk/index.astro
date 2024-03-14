@@ -15,11 +15,11 @@ const { data } = Astro.props
 const html = marked.parse( data.description )
 ---
 <Container>
-    <section class="grid grid-cols-4 gap-20 py-20">
+    <section class="grid md:grid-cols-4 gap-4 md:gap-20 py-4">
         <section>
             <HeadingTwo>{ data.title }</HeadingTwo>
         </section>
-        <section class="col-span-3 space-y-10 border-b border-black/5 pb-10">
+        <section class="md:col-span-3 space-y-10 border-b border-black/5 pb-10">
             <section set:html = { html } class="markdown" />
             <div>
                 <Link href={ data.button_link } aria_label="">

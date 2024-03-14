@@ -20,6 +20,7 @@ import LetsTalk from "@/components/home/lets-talk/index.astro"
 import Clients from "@/components/home/clients/index.astro"
 import Services from "@/components/home/services/index.astro"
 import Insights from "@/components/home/insights/index.astro"
+import Contact from "@/components/home/contact/index.astro"
 ---
 <Layout
 	description={ meta.description }
@@ -42,5 +43,10 @@ import Insights from "@/components/home/insights/index.astro"
 		data={ home_data.insights }
 		blogs={ blogs }
 	/>
+	<Contact
+		number={ home_data.telephone_number }
+		location={ home_data.location }
+	/>
+	<section class="py-20" />
 	<Footer />
 </Layout>
