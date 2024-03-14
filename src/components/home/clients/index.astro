@@ -1,0 +1,55 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import ClientCard from "./card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import TargetBlankLink from "@/atoms/links/target-blank/index.astro"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "@/constants/image"
+
+const { data, projects } = Astro.props
+---
+<section>
+    <Container>
+        <section class="space-y-4">
+            <HeadingTwo>{ data.title }</HeadingTwo>
+            <div>
+                <TargetBlankLink href={ data.link } aria_label="">
+                    <p class="text-oplayo_green font-lato font-medium">{ data.sub_title }</p>
+                </TargetBlankLink>
+            </div>
+            <section class="grid md:grid-cols-2 gap-4 md:gap-16 py-4 md:py-12">
+                {
+
+                    projects.map( ( value ) => {
+
+                        return(
+
+                            value.display_on_home &&
+
+                            <ClientCard
+                                src={ value.cover }
+                                href={ value.link }
+                                title={ value.title }
+                            />
+                        )
+
+                    })
+
+                }
+            </section>
+        </section>
+    </Container>
+    <div class="h-12 md:h-52 w-full bg-zinc-200">
+        <img
+            src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY }
+            alt=""
+            class="w-full h-full"
+        />
+    </div>
+</section>

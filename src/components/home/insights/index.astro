@@ -1,0 +1,62 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import HeadingThree from "@/atoms/headings/three/index.astro"
+import Paragraph from "@/atoms/paragraphs/regular/index.astro"
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "@/constants/image"
+
+const { data, blogs } = Astro.props
+---
+<Container>
+    <section class="py-12 md:py-20 space-y-2">
+        <HeadingTwo>{ data.title }</HeadingTwo>
+        <Paragraph>{ data.sub_title }</Paragraph>
+        <div class="pt-6">
+            <Link href={ data.button_link } aria_label="">
+                <PrimaryButton>{ data.button_text }</PrimaryButton>
+            </Link>
+        </div>
+        <section class="grid md:grid-cols-3 gap-4 md:gap-14 py-6">
+            {
+
+                blogs.map( ( value ) => {
+
+                    return(
+                        <div class="space-y-4 bg-white shadow-2xl h-fit pb-10">
+                            <div>
+                                <Link href={ value.link } aria_label="">
+                                    <div class="w-full aspect-video bg-zinc-200">
+                                        <img
+                                            src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
+                                            alt=""
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </Link>
+                            </div>
+                            <div class="p-6">
+                                <Link href={ value.link } aria_label="">
+                                    <HeadingThree>{ value.title }</HeadingThree>
+                                </Link>
+                            </div>
+                        </div>
+                    )
+
+                })
+
+            }
+        </section>
+        <div class="pt-6">
+            <Link href={ data.button_link } aria_label="">
+                <PrimaryButton>{ data.button_text }</PrimaryButton>
+            </Link>
+        </div>
+    </section>
+</Container>

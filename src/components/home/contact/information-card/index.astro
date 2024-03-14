@@ -1,0 +1,39 @@
+---
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "@/constants/image"
+
+// IMPORTS ASTRO ATOMS
+import HeadingFour from "@/atoms/headings/four/white/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const {
+
+    title,
+    sub_title,
+    description,
+    src,
+    alt,
+    href
+
+} = Astro.props
+---
+<div class="space-y-4">
+    <HeadingFour>{ title }</HeadingFour>
+    <div class="flex gap-4 items-center">
+        <Link href={ href } aria_label="">
+            <div class="bg-oplayo_zinc rounded-full p-4">
+                <div class="size-10">
+                    <img
+                        src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
+                        alt={ alt }
+                        class="size-10"
+                    />
+                </div>
+            </div>
+        </Link>
+        <div>
+            <HeadingFour>{ sub_title }</HeadingFour>
+            <p class="font-lato text-white">{ description }</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import HeadingThree from "@/atoms/headings/three/index.astro"
+import SmallParagraph from "@/atoms/paragraphs/small/index.astro"
+import ArrowButton from "@/atoms/buttons/arrow/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const { data, services } = Astro.props
+---
+<section class="bg-oplayo_light_gray py-4">
+    <Container>
+        <section>
+            <HeadingTwo>{ data.title }</HeadingTwo>
+            <section class="grid md:grid-cols-2 gap-4 md:gap-12 py-12">
+                {
+
+                    services.map( ( value ) => {
+
+                        return(
+                            <div class="space-y-4">
+                                <HeadingThree>{ value.title }</HeadingThree>
+                                <SmallParagraph>{ value.description }</SmallParagraph>
+                                <div class="pt-6 pl-6">
+                                    <Link href={ value.button_link } aria_label="">
+                                        <ArrowButton>{ value.button_text }</ArrowButton>
+                                    </Link>
+                                </div>
+                            </div>
+                        )
+
+                    })
+
+                }
+            </section>
+        </section>
+    </Container>
+</section>

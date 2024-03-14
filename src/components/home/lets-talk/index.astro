@@ -1,0 +1,31 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import PrimaryButton from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const { data } = Astro.props
+
+const html = marked.parse( data.description )
+---
+<Container>
+    <section class="grid md:grid-cols-4 gap-4 md:gap-20 py-4">
+        <section>
+            <HeadingTwo>{ data.title }</HeadingTwo>
+        </section>
+        <section class="md:col-span-3 space-y-10 border-b border-black/5 pb-10">
+            <section set:html = { html } class="markdown" />
+            <div>
+                <Link href={ data.button_link } aria_label="">
+                    <PrimaryButton>{ data.button_text }</PrimaryButton>
+                </Link>
+            </div>
+        </section>
+    </section>
+</Container>
